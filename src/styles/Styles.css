@@ -1,0 +1,38 @@
+/* Parte central da tela */
+
+.CentrodaPagina {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+}
+.Todo {
+
+    width: 90vw;
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+    height: 90%;
+    background-color: aqua;
+      
+}
+
+.PrimeiraColuna {
+
+    width: 15vw;
+
+}
+
+.SegundaColuna {
+
+    width: 70vw;
+    
+}
+
+.TerceiraColuna {
+
+    width: 15vw;
+    
+}
