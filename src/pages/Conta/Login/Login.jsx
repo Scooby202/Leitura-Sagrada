@@ -1,13 +1,12 @@
-function LoginPage () {
+import Validação from "../../../components/Validação"
+import "../../../styles/Styles.css"
+
+function Login () {
 
 
         return(
           <body className="BOX">
             <main className="TelaConta">
-              <div className="LoginTodo">
-                <a href="Recuperar.jsx" className="Login">Esqueceu a Senha?</a>
-                <a href="Conta.jsx" className="Login">Criar Conta</a>
-              </div>
             <div className="FormularioTodo">
               <h1 className="Titulo">Login</h1>
               <form className="Formulario" id="form" autoComplete="on">
@@ -21,16 +20,10 @@ function LoginPage () {
               <div className="ContinuaTodo">
                 <a className="Continua" id="Continua3" type="submit" onClick={Validação}></a>
               </div>
-              <div className="ContinuaTodo2">
-                <a className="Continua" id="Continua4" type="submit" onClick={Validação}></a>
-              </div>
               <div className="LoginTodo2">
                 <a href="Conta.jsx" className="Login">Criar Conta</a>
                 <a href="Recuperar.jsx"className="Login">Esqueceu a Senha?</a>
               </div>
-            </div>
-            <div className="CapaConta">
-                {/* Capa da tela */}
             </div>
         
         
