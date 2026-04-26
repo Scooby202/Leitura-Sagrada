@@ -1,38 +1,176 @@
-/* Parte central da tela */
+:root {
+  /* Cores do "Papel" da janela */
+  --bg-window: #fcfaf7; 
+  --sidebar-bg: #f3eee6;
+  
+  /* Cores do Fundo Externo */
+  --outer-bg: #e2d9c8; 
+  
+  --text-color: #2c2c2c;
+  --accent-color: #8b5e3c;
+  --verse-number: #a67c52;
+  --max-width: 700px; /* Reduzi um pouco para caber melhor entre duas barras */
+  --window-radius: 20px;
+}
 
-.CentrodaPagina {
+body {
+  background-color: var(--outer-bg);
+  background-image: radial-gradient(circle, #ebe2d1 0%, #d8cdb8 100%);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  font-family: 'Playfair Display', serif;
+}
 
-    display: flex;
+/* Janela com 3 colunas: Sidebar Esquerda | Conteúdo | Sidebar Direita */
+.app-container {
+  display: grid;
+  grid-template-columns: 250px 1fr 250px; /* Três colunas definidas */
+  width: 100%;
+  max-width: 1400px; /* Aumentado para acomodar a nova barra */
+  height: 90vh;
+  background-color: var(--bg-window);
+  border-radius: var(--window-radius);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  overflow: hidden; 
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* Estilo comum para as duas Sidebars */
+.sidebar {
+  background-color: var(--sidebar-bg);
+  padding: 1.5rem;
+  overflow-y: auto;
+}
+
+.sidebar-left {
+  border-right: 1px solid #e0d8cc;
+}
+
+.sidebar-right {
+  border-left: 1px solid #e0d8cc;
+}
+
+.sidebar h2 {
+  font-family: 'Playfair Display', serif;
+  color: var(--accent-color);
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  border-bottom: 1px solid #e0d8cc;
+  padding-bottom: 0.5rem;
+}
+
+/* Área de Leitura Centralizada */
+.bible-content {
+  padding: 3rem 2rem;
+  overflow-y: auto;
+  background-color: var(--bg-window);
+}
+
+.content-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.chapter-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  color: var(--accent-color);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.verse {
+  font-family: 'Merriweather', serif;
+  line-height: 1.8;
+  color: var(--text-color);
+}
+
+.verse-number {
+  font-weight: bold;
+  color: var(--verse-number);
+  font-size: 0.8rem;
+  vertical-align: super;
+  margin-right: 4px;
+  margin-left: 8px;
+}
+
+/* Scrollbars elegantes para as 3 áreas */
+.sidebar::-webkit-scrollbar,
+.bible-content::-webkit-scrollbar {
+  width: 5px;
+}
+
+.sidebar::-webkit-scrollbar-thumb,
+.bible-content::-webkit-scrollbar-thumb {
+  background: #d1c7b5;
+  border-radius: 10px;
+}
+
+/* Ajuste Responsivo */
+@media (max-width: 1100px) {
+  .app-container {
+    grid-template-columns: 200px 1fr; /* Esconde a direita em telas médias */
+  }
+  .sidebar-right {
+    display: none;
+  }
+}
+
+/* Tela de Login */
+
+.TelaConta {
+display: grid;
+  grid-template-columns: 50vw; /* Três colunas definidas */
+  width: 100%;
+  max-width: 1400px; /* Aumentado para acomodar a nova barra */
+  height: 90vh;
+  background-color: var(--bg-window);
+  border-radius: var(--window-radius);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  overflow: hidden; 
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  justify-items: center;
+}
+
+.FormularioTodo {
+    display: grid;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    width: 30vw;
+    background-color: var(--sidebar-bg);
+}
+
+.Titulo {
+    text-align: center;
+}
+
+.Formulario {
+    display: grid;
+    justify-content: center;
+    gap: 5vh;
+    width: 20vw;
+}
+
+.LoginTodo2 {
+    display: grid;
+    justify-content: center;
+}
+
+
+@media (max-width: 800px) {
+  body { padding: 0; }
+  .app-container {
     height: 100vh;
-}
-.Todo {
-
-    width: 90vw;
-    display: flex;
-    align-items: center;
-    gap: 2vw;
-    height: 90%;
-    background-color: aqua;
-      
-}
-
-.PrimeiraColuna {
-
-    width: 15vw;
-
-}
-
-.SegundaColuna {
-
-    width: 70vw;
-    
-}
-
-.TerceiraColuna {
-
-    width: 15vw;
-    
+    border-radius: 0;
+    grid-template-columns: 1fr;
+  }
+  .sidebar-left, .sidebar-right {
+    display: none;
+  }
 }
