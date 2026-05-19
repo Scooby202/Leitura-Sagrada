@@ -1,4 +1,4 @@
-import BarradeAcões from "../../components/BarradeAcões"
+import BarradeAcões from "../../components/BarradeAções"
 import Menu from "../../components/Menu"
 
 
@@ -6,20 +6,25 @@ function Principal () {
 
     return (
 
-        <main>
-            <div className="CentrodaPagina">
+        <div>
 
-                <Menu/>
+            <main>
 
-            </div>
+                <div className="CentrodaPagina">
+
+                    <Menu/>
+
+                </div>
             
+            </main> 
 
-            <footer>
+            <footer className="BarraInferior">
 
-                
+                    <BarradeAcões/>
 
             </footer>
-        </main>   
+
+        </div>
 
     )
 }
