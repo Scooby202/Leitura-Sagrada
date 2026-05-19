@@ -1,0 +1,154 @@
+import { useState, useEffect } from 'react';
+
+function FormAnotação() {
+// Estados para a lista de notas e para os campos do formulário
+  const [notas, setNotas] = useState([]);
+  const [deQualVersiculo, setdeQualVersiculo] = useState('');
+  const [nota, setNota] = useState('');
+  
+  // Esse estado controla se estamos criando uma nota nova ou editando uma existente
+  const [idEditando, setIdEditando] = useState(null);
+
+  const API_URL = 'http://localhost:3000/notas';
+
+  // --- 1. READ (Buscar as notas do servidor) ---
+  const buscarnotas = () => {
+    fetch(API_URL)
+      .then((res) => res.json())
+      .then((dados) => setNotas(dados))
+      .catch((err) => console.error("Erro ao buscar notas:", err));
+  };
+
+  useEffect(() => {
+    buscarnotas();
+  }, []);
+
+  // --- 2. CREATE & UPDATE (Salvar ou Atualizar) ---
+  const handleSalvarnota = (e) => {
+    e.preventDefault();
+
+    if (!deQualVersiculo.trim() || !nota.trim()) {
+      alert("Por favor, preencha todos os campos.");
+      return;
+    }
+
+    const dadosnota = { deQualVersiculo, nota };
+
+    if (idEditando) {
+      // Se tem um ID editando, fazemos um PUT para atualizar
+      fetch(`${API_URL}/${idEditando}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(dadosnota),
+      })
+        .then(() => {
+          buscarnotas();
+          limparFormulario();
+        });
+    } else {
+      // Se não tem ID editando, fazemos un POST para criar uma nova
+      fetch(API_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(dadosnota),
+      })
+        .then(() => {
+          buscarnotas();
+          limparFormulario();
+        });
+    }
+  };
+
+  // --- 3. DELETE (Apagar nota) ---
+  const handleDeletarnota = (id) => {
+    if (window.confirm("Deseja realmente excluir esta anotação?")) {
+      fetch(`${API_URL}/${id}`, {
+        method: 'DELETE',
+      })
+        .then(() => buscarnotas());
+    }
+  };
+
+  // --- Auxiliar: Preparar o formulário para edição ---
+  const handlePrepararEdicao = (nota) => {
+    setIdEditando(nota.id);
+    setdeQualVersiculo(nota.deQualVersiculo);
+    setNota(nota.nota);
+  };
+
+  // --- Auxiliar: Limpar os inputs ---
+  const limparFormulario = () => {
+    setIdEditando(null);
+    setdeQualVersiculo('');
+    setNota('');
+  };
+
+  return (
+    <div className="crud-container">
+      <h2 className="Titulo">📝 Minhas Anotações</h2>
+
+      {/* FORMULÁRIO (CREATE / UPDATE) */}
+      <form  className="Input" onSubmit={handleSalvarnota}>
+        <h3 className="Titulo">{idEditando ? "Editar Anotação" : "Nova Anotação"}</h3>
+        
+        <input 
+          className="InputForm"
+          type="text" 
+          placeholder="Título" 
+          value={deQualVersiculo} 
+          onChange={(e) => setdeQualVersiculo(e.target.value)}
+        />
+        
+        <textarea 
+          className="InputForm"
+          placeholder="Digite sua anotação aqui..." 
+          value={nota} 
+          onChange={(e) => setNota(e.target.value)}
+          rows="4"
+        />
+
+        <div>
+          <button type="submit" className="login-button">
+            {idEditando ? "Salvar Alterações" : "Adicionar nota"}
+          </button>
+          
+          {idEditando && (
+            <button type="button" className="login-button" onClick={limparFormulario}>
+              Cancelar
+            </button>
+          )}
+        </div>
+      </form>
+
+      <hr />
+
+      {/* LISTA DE AnOTAÇÕES (READ) */}
+      <h3 className="Titulo" >Anotações Salvas</h3>
+      {notas.length === 0 ? (
+        <p>Nenhuma anotação encontrada.</p>
+      ) : (
+        <div>
+          {notas.map((nota) => (
+            <div key={nota.id}>
+              <h4>{nota.deQualVersiculo}</h4>
+              <p>{nota.nota}</p>
+              
+              <div>
+                {/* BOTÕES DE UPDATE E DELETE */}
+                <button className="login-button" onClick={() => handlePrepararEdicao(nota)} >
+                  Editar
+                </button>
+                <button className="login-button" onClick={() => handleDeletarnota(nota.id)}>
+                  Excluir
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+
+export default FormAnotação;
