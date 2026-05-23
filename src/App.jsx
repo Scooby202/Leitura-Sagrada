@@ -12,16 +12,27 @@ function App() {
   const [count, setCount] = useState(0);
 
   return (
+    
     <BrowserRouter>
+
       <Routes>
+
         <Route path='/' element={<Principal/>}></Route>
+
         <Route path='/Login.jsx' element={<Login/>}></Route>
+
         <Route path='/EsqueceuSenha.jsx' element={<EsqueceuSenha/>}></Route>
+
         <Route path='/CriarConta.jsx' element={<CriarConta/>}></Route>
+
         <Route path='/Anotações.jsx' element={<Anotações/>}></Route>
+
         <Route path='/CodigoEsqueceuSenha.jsx' element={<CodigoEsqueceuSenha/>}></Route>
+
         <Route path='/NovaSenha.jsx' element={<NovaSenha/>}></Route>
+
       </Routes>
+
     </BrowserRouter>
 
   );

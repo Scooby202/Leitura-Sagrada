@@ -15,7 +15,7 @@
   --text-color: #2c2c2c;
   --accent-color: #8b5e3c;
   --verse-number: #a67c52;
-  --max-width: 700px; /* Reduzi um pouco para caber melhor entre duas barras */
+  --max-width: 700px;
   --window-radius: 20px;
 }
 
@@ -36,12 +36,12 @@
   font-family: 'Playfair Display', serif;
 }
 
-/* Janela com 3 colunas: Sidebar Esquerda | Conteúdo | Sidebar Direita */
+
 .app-container {
   display: grid;
-  grid-template-columns: 250px 1fr 250px; /* Três colunas definidas */
+  grid-template-columns: 250px 1fr 250px;
   width: 100%;
-  max-width: 1400px; /* Aumentado para acomodar a nova barra */
+  max-width: 1400px;
   height: 90vh;
   background-color: var(--bg-window);
   border-radius: var(--window-radius);
@@ -61,9 +61,9 @@
 
 .Anotações-content {
   display: grid;
-  grid-template-columns: 250px 1fr; /* Três colunas definidas */
+  grid-template-columns: 250px 1fr;
   width: 100%;
-  max-width: 1400px; /* Aumentado para acomodar a nova barra */
+  max-width: 1400px;
   height: 90vh;
   background-color: var(--bg-window);
   border-radius: var(--window-radius);
@@ -73,28 +73,23 @@
 }
 
 .Anotações-content2 {
-
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* ==========================================================================
-   CONTAINER PRINCIPAL (.crud-container)
-   ========================================================================== */
 .crud-container {
   max-width: 1100px;
-  width: 90%;
+  width: 80%;
   margin: 0 auto;
   padding: 30px 20px;
-  font-family: 'Merriweather', Georgia, serif; /* Fonte confortável para leitura */
+  font-family: 'Merriweather', Georgia, serif;
   box-sizing: border-box;
   background-color: #fdfdfd;
   border-radius: 8px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
-/* Título Principal (h2) */
 .crud-container h2 {
   font-family: 'Playfair Display', Times, serif;
   font-size: 2.4rem;
@@ -104,9 +99,6 @@
   padding-bottom: 15px;
 }
 
-/* ==========================================================================
-   FORMULÁRIO (Tags internas do seu <form>)
-   ========================================================================== */
 .crud-container form {
   background-color: #ffffff;
   padding: 20px;
@@ -115,7 +107,6 @@
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
 }
 
-/* Título dentro do formulário (h3) */
 .crud-container form h3 {
   font-family: 'Playfair Display', serif;
   margin-top: 0;
@@ -123,7 +114,6 @@
   font-size: 1.3rem;
 }
 
-/* Input do Título */
 .crud-container form input[type="text"] {
   width: 100%;
   font-family: 'Merriweather', serif;
@@ -134,7 +124,6 @@
   transition: border-color 0.2s ease, background-color 0.2s ease;
 }
 
-/* Textarea (Acessado pelo ID que está no seu JSX) */
 #txt-conteudo {
   width: 100%;
   font-family: 'Merriweather', serif;
@@ -143,12 +132,11 @@
   box-sizing: border-box;
   background-color: #fafafa;
   line-height: 1.6;
-  resize: none; /* Remove a barra manual de arrastar */
-  overflow-y: hidden; /* Esconde a barra de rolagem enquanto expande */
+  resize: none;
+  overflow-y: hidden;
   transition: border-color 0.2s ease, background-color 0.2s ease;
 }
 
-/* Efeito de Foco nos Inputs */
 .crud-container form input[type="text"]:focus,
 #txt-conteudo:focus {
   border-color: #3498db;
@@ -156,7 +144,6 @@
   outline: none;
 }
 
-/* Linha divisória <hr> */
 .crud-container hr {
   border: 0;
   height: 1px;
@@ -164,17 +151,12 @@
   margin: 30px 0;
 }
 
-/* ==========================================================================
-   LISTA DE ANOTAÇÕES SALVAS
-   ========================================================================== */
-/* Título da Lista (h3 que fica logo após o <hr>) */
 .crud-container > h3 {
   font-family: 'Playfair Display', serif;
   font-size: 1.5rem;
   margin-bottom: 20px;
 }
 
-/* Texto de "Nenhuma anotação encontrada" (p) */
 .crud-container > p {
   text-align: center;
   font-style: italic;
@@ -191,12 +173,9 @@
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  
   resize: none;            
   overflow-y: hidden;     
   box-sizing: border-box; 
-  
-  
   min-height: 40px;
   max-height: 300px;       
 }
@@ -206,7 +185,6 @@
   outline: none;
 }
 
-/* Estilo comum para as duas Sidebars */
 .sidebar {
   background-color: var(--sidebar-bg);
   padding: 1.5rem;
@@ -231,7 +209,6 @@
   padding-bottom: 0.5rem;
 }
 
-/* Área de Leitura Centralizada */
 .bible-content {
   padding: 3rem 2rem;
   overflow-y: auto;
@@ -266,7 +243,6 @@
   margin-left: 8px;
 }
 
-/* Scrollbars para as 3 áreas */
 .sidebar::-webkit-scrollbar,
 .bible-content::-webkit-scrollbar {
   width: 5px;
@@ -280,7 +256,6 @@
 
 #mobileButton {
   display: none;
-
 }
 
 /* Tela de Login */
@@ -295,34 +270,33 @@
 }
 
 .FormularioTodo {
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    width: 30vw;
-    background-color: var(--sidebar-bg);
-    height: 90vh;
-    border-radius: var(--window-radius);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    min-width: 350px;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  width: 30vw;
+  background-color: var(--sidebar-bg);
+  height: 90vh;
+  border-radius: var(--window-radius);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  min-width: 350px;
 }
 
 .Titulo {
-    text-align: center;
+  text-align: center;
 }
 
 .Formulario {
-    display: grid;
-    justify-content: center;
-    gap: 5vh;
+  display: grid;
+  justify-content: center;
+  gap: 5vh;
 }
 
 .LoginTodo2 {
-    display: grid;
-    justify-content: center;
+  display: grid;
+  justify-content: center;
 }
 
-/* Grupo de Input (Label + Campo) */
 .Input {
   display: flex;
   flex-direction: column;
@@ -355,7 +329,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 
 /* Estilo para o Botão*/
@@ -390,14 +363,11 @@
   width: 100vw;
   height: 4vh;
   background-color: #d3ccc1;
-
 }
 
 .Barra {
-
   display: flex;
   margin-top: 0.5rem;
-
 }
 
 /* Estilo para o Botão*/
@@ -413,13 +383,10 @@
   font-weight: 600;
   cursor: pointer;
   transition: background 0.3s, transform 0.2s;
-
-  
   display: inline-block;   
   text-decoration: none;    
   text-align: center;       
   box-sizing: border-box;       
-  
   width: 100%;               
 }
 
@@ -430,7 +397,6 @@
 }
 
 .Credito {
-
   color: var(--verse-number);
   position: fixed;
   right: 0;
@@ -438,20 +404,14 @@
 }
 
 .nota-texto-container {
-  /* Defina a altura máxima que desejar antes do scroll aparecer */
   max-height: 200px; 
-  
-  /* Adiciona a barra de rolagem vertical apenas se o texto passar da altura máxima */
+  max-width: 80vw;
   overflow-y: auto;  
-  
-  /* Evita que palavras muito longas quebrem o layout horizontal */
   word-wrap: break-word; 
-  
-  /* Dá um espacinho para a barra de rolagem não ficar grudada no texto */
   padding-right: 8px; 
+  gap: 4px;
 }
 
-/* Opcional: Estilizando a barra de rolagem para ficar mais elegante */
 .nota-texto-container::-webkit-scrollbar {
   width: 6px;
 }
@@ -459,27 +419,35 @@
   background: transparent;
 }
 .nota-texto-container::-webkit-scrollbar-thumb {
-  background-color: #cbd5e1; /* Cor da barrinha */
+  background-color: #cbd5e1;
   border-radius: 10px;
 }
 
 /* Ajuste Responsivo */
 @media (max-width: 1100px) {
   .app-container {
-    grid-template-columns: 200px 1fr; /* Esconde a direita em telas médias */
+    grid-template-columns: 200px 1fr;
   }
   .sidebar-right {
     display: none;
   }
 
-    #mobileButton {
+  #mobileButton {
     display: block;
-
     position: fixed;
     top: 50vh;
     right: 0;
     border-radius: 100px;
-    
+  }
+
+  .nota-texto-container { 
+  max-width: 70vw; 
+  word-wrap: break-word; 
+  }
+
+  .crud-container {
+    max-width: 530px;
+
   }
 }
 
@@ -498,20 +466,16 @@
   }
 }
 
-/* Ajuste Responsivo */
 @media (max-width: 450px) {
   .app-container {
-    grid-template-columns: 1fr ; /* Esconde a direita em telas médias */
-    
+    grid-template-columns: 1fr ;
   }
   #mobileButton {
     display: block;
-
     position: fixed;
     top: 50vh;
     right: 0;
     border-radius: 100px;
-    
   }
   .sidebar-right {
     display: none;
@@ -522,7 +486,6 @@
   }
 
   .Credito {
-
     display: none;
   }
 

@@ -8,9 +8,10 @@ function CRUDAnotações () {
     return (
     
         <div className="Anotações-content">
+
             <aside className="sidebar sidebar-left">
                 
-            <h2>Leitura Sagrada</h2>
+                <h2>Leitura Sagrada</h2>
 
             </aside>
         

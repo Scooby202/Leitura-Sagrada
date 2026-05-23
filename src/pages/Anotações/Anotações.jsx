@@ -19,7 +19,7 @@ function Anotações () {
 
             <footer className="BarraInferior">
 
-                    <BarradeAções/>
+                <BarradeAções/>
 
             </footer>
 
