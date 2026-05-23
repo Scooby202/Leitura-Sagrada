@@ -1,16 +1,47 @@
-# React + Vite
+readme_content = """# PLATAFORMA DE ANOTAÇÕES BÍBLICAS ( LEITURA )
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<p align="center">
+  <img src="https://img.shields.io/static/v1?label=react&message=v19.2.4&color=blue&style=for-the-badge&logo=REACT"/>
+  <img src="https://img.shields.io/static/v1?label=backend&message=json-server&color=orange&style=for-the-badge"/>
+  <img src="https://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=RED&style=for-the-badge"/>
+</p>
 
-Currently, two official plugins are available:
+> Status do Site Web: :warning: (em desenvolvimento)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### Índice 
 
-## React Compiler
+:small_blue_diamond: [Descrição do projeto](#descrição-do-projeto)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+:small_blue_diamond: [Páginas](#páginas)
 
-## Expanding the ESLint configuration
+:small_blue_diamond: [Pré-requisitos](#pré-requisitos)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+:small_blue_diamond: [Como rodar a aplicação](#como-rodar-a-aplicação-arrow_forward)
+
+## Descrição do projeto 
+
+<p align="justify">
+  A presente aplicação consiste em um sistema web estruturado para o registro, gerenciamento e catalogação de anotações e reflexões pessoais associadas a passagens bíblicas. O projeto foi concebido com o objetivo de aplicar conceitos avançados de desenvolvimento front-end na biblioteca React, utilizando rotinas modernas de manipulação de formulários, controle de estados assíncronos e integração com serviços locais para persistência de dados.
+</p>
+
+## Páginas
+
+:heavy_check_mark: **Módulos de Autenticação e Segurança**: 
+Compreende as interfaces de Login, Cadastro de Usuário (Registrar) e Fluxo de Redefinição de Credenciais (Esqueceu a Senha e Nova Senha). Estas páginas integram validações estritas de strings e conferência de igualdade de caracteres para integridade dos dados antes do envio ao banco.
+
+:heavy_check_mark: **Página Principal (Home / Espaço de Leitura)**:
+Interface central dedicada à exibição dos textos selecionados e ao gerenciamento direto dos blocos de anotações vinculados a cada passagem.
+
+:heavy_check_mark: **Página de Gerenciamento de Conta**:
+Área destinada à visualização do perfil do usuário autenticado e persistência de dados de sessão através de armazenamento local (*localStorage*).
+
+## Pré-requisitos
+
+:warning: **Node.js** (Ambiente de execução JavaScript - Versão LTS recomendada)  
+:warning: **NPM** (Gerenciador de pacotes nativo do Node.js)
+
+## Como rodar a aplicação :arrow_forward:
+
+Para configurar o ambiente localmente e executar tanto a interface do usuário quanto o servidor de dados estruturados, siga os passos descritos no terminal de comando abaixo:
+
+1. Clonar o repositório correspondente ao projeto:
