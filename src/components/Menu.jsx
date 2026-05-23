@@ -132,7 +132,7 @@ function Menu () {
 
             <label htmlFor="select-livro">Escolha o Livro: </label>
 
-            <select id="select-livro" onChange={handleTrocaLivro} value={livroSelecionado?.id || ""}>
+            <select className="login-button" id="select-livro" onChange={handleTrocaLivro} value={livroSelecionado?.id || ""}>
 
               {livros.map(livro => (
 
@@ -154,7 +154,7 @@ function Menu () {
 
                 {livroSelecionado.capitulos.map(capitulo => (
 
-                  <button key={capitulo.numero} onClick={() => setCapituloSelecionado(capitulo)} className={capituloSelecionado?.numero === capitulo.numero ? "ativo" : ""}>
+                  <button key={capitulo.numero} onClick={() => setCapituloSelecionado(capitulo)} className="login-button">
                 
                     {capitulo.numero}
 
