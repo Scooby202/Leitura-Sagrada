@@ -1,5 +1,4 @@
-```markdown
-# Leitura — Plataforma de Gerenciamento de Leitura
+# Leitura — Plataforma de Anotações sobre a Biblía
 
 O **Leitura** é uma aplicação web moderna voltada para a organização, acompanhamento e catalogação de hábitos literários. Desenvolvido com foco em uma experiência de usuário fluida e responsiva, o projeto serve como um hub central para leitores registrarem seus progressos, avaliarem obras e gerenciarem suas estantes digitais.
 
