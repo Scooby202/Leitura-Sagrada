@@ -1,11 +1,11 @@
 function Validação () {
 
-
 const form = document.querySelector("#form");
 const emailInput = document.querySelector("#email");
 const passwordInput = document.querySelector("#password");
-const ContinuaInfo = document.querySelector("#Continua");
-const ContinuaInfo2 = document.querySelector("#Continua2");
+const passwordInput2 = document.querySelector("#password2");
+const codigoInput = document.querySelector("#codigo")
+
 
     //Verificar o e-mail
 
@@ -34,9 +34,17 @@ const ContinuaInfo2 = document.querySelector("#Continua2");
         }
     };
 
+    
+        //Verificar a codigo
+    if(codigoInput) {
+        if(!VerificarSenha(codigoInput.value, 6)) {
+            alert("Codigo tem 6 digitos")
+            return false;
+        };
+    };
+
     //Se todos estiverem preenchindo
     
-
         form.requestSubmit();
         return;
 
