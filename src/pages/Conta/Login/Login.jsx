@@ -1,12 +1,13 @@
 import BarradeAcões from "../../../components/BarradeAções"
 import Validação from "../../../components/Validação"
 import "../../../styles/Styles.css"
+import { useNavigate } from "react-router-dom";
 
 function Login () {
 
-  const formData = document.querySelector("#form");
-  const ContinuaPagina = document.querySelector("#ContinuaTodo");
+  const navigate = useNavigate();
 
+  const formData = document.querySelector("#form");
 
   const handleLogin = async (formData) => {
 
@@ -22,7 +23,7 @@ function Login () {
     localStorage.setItem("user_logado", JSON.stringify(user));
     
     // Redireciona para a Bíblia 
-    ContinuaPagina.setAttribute("href", "/");
+    navigate('/');
   } else {
     alert("Usuário ou senha inválidos. Tente novamente!");
   }
