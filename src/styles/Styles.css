@@ -83,7 +83,8 @@
    CONTAINER PRINCIPAL (.crud-container)
    ========================================================================== */
 .crud-container {
-  max-width: 700px;
+  max-width: 1100px;
+  width: 90%;
   margin: 0 auto;
   padding: 30px 20px;
   font-family: 'Merriweather', Georgia, serif; /* Fonte confortável para leitura */
@@ -180,6 +181,10 @@
   padding: 20px;
 }
 
+.verses-container {
+  width: 100%;
+}
+
 .textarea-expansivel {
   width: 100%;
   padding: 10px;
@@ -273,14 +278,9 @@
   border-radius: 10px;
 }
 
-/* Ajuste Responsivo */
-@media (max-width: 1100px) {
-  .app-container {
-    grid-template-columns: 200px 1fr; /* Esconde a direita em telas médias */
-  }
-  .sidebar-right {
-    display: none;
-  }
+#mobileButton {
+  display: none;
+
 }
 
 /* Tela de Login */
@@ -304,6 +304,7 @@
     border-radius: var(--window-radius);
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
     border: 1px solid rgba(255, 255, 255, 0.5);
+    min-width: 350px;
 }
 
 .Titulo {
@@ -314,7 +315,6 @@
     display: grid;
     justify-content: center;
     gap: 5vh;
-    width: 20vw;
 }
 
 .LoginTodo2 {
@@ -437,14 +437,101 @@
   margin-right: 1rem;
 }
 
+.nota-texto-container {
+  /* Defina a altura máxima que desejar antes do scroll aparecer */
+  max-height: 200px; 
+  
+  /* Adiciona a barra de rolagem vertical apenas se o texto passar da altura máxima */
+  overflow-y: auto;  
+  
+  /* Evita que palavras muito longas quebrem o layout horizontal */
+  word-wrap: break-word; 
+  
+  /* Dá um espacinho para a barra de rolagem não ficar grudada no texto */
+  padding-right: 8px; 
+}
+
+/* Opcional: Estilizando a barra de rolagem para ficar mais elegante */
+.nota-texto-container::-webkit-scrollbar {
+  width: 6px;
+}
+.nota-texto-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+.nota-texto-container::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1; /* Cor da barrinha */
+  border-radius: 10px;
+}
+
+/* Ajuste Responsivo */
+@media (max-width: 1100px) {
+  .app-container {
+    grid-template-columns: 200px 1fr; /* Esconde a direita em telas médias */
+  }
+  .sidebar-right {
+    display: none;
+  }
+
+    #mobileButton {
+    display: block;
+
+    position: fixed;
+    top: 50vh;
+    right: 0;
+    border-radius: 100px;
+    
+  }
+}
+
 @media (max-width: 800px) {
   body { padding: 0; }
   .app-container {
     height: 100vh;
-    border-radius: 0;
     grid-template-columns: 1fr;
   }
   .sidebar-left, .sidebar-right {
     display: none;
+  }
+
+  .Anotações-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Ajuste Responsivo */
+@media (max-width: 450px) {
+  .app-container {
+    grid-template-columns: 1fr ; /* Esconde a direita em telas médias */
+    
+  }
+  #mobileButton {
+    display: block;
+
+    position: fixed;
+    top: 50vh;
+    right: 0;
+    border-radius: 100px;
+    
+  }
+  .sidebar-right {
+    display: none;
+  }
+
+  .mobileButton {
+    display: flex;
+  }
+
+  .Credito {
+
+    display: none;
+  }
+
+  .Barra {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .BotoesdaBarra {
+    margin-left: 0vw;
   }
 }
