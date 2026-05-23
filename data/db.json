@@ -130738,29 +130738,21 @@
     {
       "id": "KzBx6sz_Oso",
       "email": "erick@gmail.com",
-      "password": "112213123123a"
+      "password": "11111111111a"
     }
   ],
   "notas": [
     {
-      "deQualVersiculo": "sadsadasd",
-      "nota": "fasfsffasdsaddfd",
-      "id": "hpqbWnFBXfU"
+      "deQualVersiculo": "hh",
+      "nota": "hhssaead",
+      "usuario": "erick@gmail.com",
+      "id": "cbKno7_xUXA"
     },
     {
-      "deQualVersiculo": "asdasdd",
-      "nota": "addsad",
-      "id": "5w_eFTl4xDE"
-    },
-    {
-      "deQualVersiculo": "bcvbc",
-      "nota": "bvb",
-      "id": "SllC_wUJMbs"
-    },
-    {
-      "deQualVersiculo": "xzx",
-      "nota": "zxcxzc",
-      "id": "mkQnbkwEJyA"
+      "deQualVersiculo": "czxxc",
+      "nota": "zczc",
+      "usuario": "",
+      "id": "-BFVWCT_HDc"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
