@@ -1,4 +1,4 @@
-readme_content = """# PLATAFORMA DE ANOTAÇÕES BÍBLICAS ( LEITURA )
+# PLATAFORMA DE ANOTAÇÕES BÍBLICAS ( LEITURA )
 
 <p align="center">
   <img src="https://img.shields.io/static/v1?label=react&message=v19.2.4&color=blue&style=for-the-badge&logo=REACT"/>
@@ -45,3 +45,5 @@ Interface central dedicada à exibição dos textos selecionados e ao gerenciame
 Para configurar o ambiente localmente e executar tanto a interface do usuário quanto o servidor de dados estruturados, siga os passos descritos no terminal de comando abaixo:
 
 1. Clonar o repositório correspondente ao projeto:
+```bash
+git clone [https://github.com/Scooby202/Processo-Trainee.git](https://github.com/Scooby202/Processo-Trainee.git)
