@@ -45,7 +45,7 @@ Interface central dedicada à exibição dos textos selecionados e ao gerenciame
 Para configurar o ambiente localmente e executar tanto a interface do usuário quanto o servidor de dados estruturados, siga os passos descritos no terminal de comando abaixo:
 
 1. Clonar o repositório correspondente ao projeto:
-```bash
+
 git clone [https://github.com/Scooby202/Processo-Trainee.git](https://github.com/Scooby202/Processo-Trainee.git)
 
 Navegar até o diretório raiz do projeto descompactado:
@@ -56,4 +56,11 @@ Inicializar o servidor de banco de dados fictício (JSON Server) para disponibil
 npm run server
 Inicializar o ambiente de desenvolvimento local (Vite/React):
 npm run dev
-Bibliotecas e Dependências do EcossistemaAs seguintes bibliotecas de terceiros foram instaladas para a correta orquestração dos recursos da aplicação:React Router DOM (Roteamento de Aplicação de Página Única):
+
+##Bibliotecas e Dependências do Ecossistema
+
+As seguintes bibliotecas de terceiros foram instaladas para a correta orquestração dos recursos da aplicação:
+
+React Router DOM (Roteamento de Aplicação de Página Única): npm install react-router-dom
+
+JSON Server (Simulador de API RESTful local): npm install json-server
