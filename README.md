@@ -59,9 +59,10 @@ npm run dev
 ```
 
 2.Bibliotecas e Dependências do Ecossistema
-
+```bash
 As seguintes bibliotecas de terceiros foram instaladas para a correta orquestração dos recursos da aplicação:
 
 React Router DOM (Roteamento de Aplicação de Página Única): npm install react-router-dom
 
 JSON Server (Simulador de API RESTful local): npm install json-server
+```
