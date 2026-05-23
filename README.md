@@ -1,45 +1,50 @@
-# PLATAFORMA DE ANOTAÇÕES BÍBLICAS ( LEITURA )
+```markdown
+# Leitura — Plataforma de Gerenciamento de Leitura
 
-<p align="center">
-  <img src="https://img.shields.io/static/v1?label=react&message=v19.2.4&color=blue&style=for-the-badge&logo=REACT"/>
-  <img src="https://img.shields.io/static/v1?label=backend&message=json-server&color=orange&style=for-the-badge"/>
-  <img src="https://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=RED&style=for-the-badge"/>
-</p>
+O **Leitura** é uma aplicação web moderna voltada para a organização, acompanhamento e catalogação de hábitos literários. Desenvolvido com foco em uma experiência de usuário fluida e responsiva, o projeto serve como um hub central para leitores registrarem seus progressos, avaliarem obras e gerenciarem suas estantes digitais.
 
-> Status do Site Web: :warning: (em desenvolvimento)
+---
 
-### Índice 
+## 📑 Estrutura de Páginas da Aplicação
 
-:small_blue_diamond: [Descrição do projeto](#descrição-do-projeto)
+A arquitetura de navegação foi projetada utilizando as capacidades de roteamento dinâmico do **React Router DOM**, dividindo-se nas seguintes visões principais:
 
-:small_blue_diamond: [Páginas](#páginas)
+### 1. Dashboard / Página Inicial
+* **Descrição:** A central do usuário ao acessar o sistema. Apresenta métricas rápidas de leitura (livros lidos, páginas consumidas no mês, metas anuais) e um panorama dos livros que estão sendo lidos atualmente.
+* **Componentes Principais:** Cards de estatísticas, carrossel ou lista de leituras ativas e atalhos rápidos para adicionar novas atividades.
 
-:small_blue_diamond: [Pré-requisitos](#pré-requisitos)
+### 2. Catálogo / Estante de Livros (`/livros` ou `/estante`)
+* **Descrição:** Exibição completa do acervo do usuário, categorizado por status de leitura: *Lidos*, *Lendo*, *Quero Ler* e *Abandonados*.
+* **Funcionalidades:** Filtros avançados por gênero, autor ou nota, ordenação cronológica ou alfabética, e busca textual em tempo real.
 
-:small_blue_diamond: [Como rodar a aplicação](#como-rodar-a-aplicação-arrow_forward)
+### 3. Detalhes do Livro (`/livros/:id`)
+* **Descrição:** Uma visão aprofundada de uma obra específica cadastrada no banco de dados.
+* **Funcionalidades:** Exibição da sinopse, ficha técnica (autor, editora, ano, páginas), histórico de sessões de leitura, notas de estudo e resenhas críticas personalizadas.
 
-## Descrição do projeto 
+### 4. Registro de Progresso (`/progresso` ou formulários dedicados)
+* **Descrição:** Interface dinâmica onde o leitor atualiza em qual página parou, permitindo calcular automaticamente a porcentagem de conclusão do livro e estimar o tempo restante para o término da obra.
 
-<p align="justify">
-  A presente aplicação consiste em um sistema web estruturado para o registro, gerenciamento e catalogação de anotações e reflexões pessoais associadas a passagens bíblicas. O projeto foi concebido com o objetivo de aplicar conceitos avançados de desenvolvimento front-end na biblioteca React, utilizando rotinas modernas de manipulação de formulários, controle de estados assíncronos e integração com serviços locais para persistência de dados.
-</p>
+---
 
-## Páginas
+## 🛠️ Escolhas Técnicas e Justificativas
 
-:heavy_check_mark: **Módulos de Autenticação e Segurança**: 
-Compreende as interfaces de Login, Cadastro de Usuário (Registrar) e Fluxo de Redefinição de Credenciais (Esqueceu a Senha e Nova Senha). Estas páginas integram validações estritas de strings e conferência de igualdade de caracteres para integridade dos dados antes do envio ao banco.
+O ecossistema tecnológico do projeto foi selecionado para garantir máxima performance de desenvolvimento (DX), modularidade e aderência às práticas modernas do desenvolvimento frontend:
 
-:heavy_check_mark: **Página Principal (Home / Espaço de Leitura)**:
-Interface central dedicada à exibição dos textos selecionados e ao gerenciamento direto dos blocos de anotações vinculados a cada passagem.
+### 1. React 19 & Vite
+* **Vite:** Substituindo o legado *Create React App*, o Vite foi escolhido como ferramenta de build devido ao seu servidor de desenvolvimento ultra-rápido baseado em *Esbuild* (com suporte nativo a Hot Module Replacement - HMR). Reduz o tempo de inicialização e empacotamento do código a quase zero.
+* **React 19:** Utilização da versão mais recente da biblioteca, aproveitando os novos mecanismos de renderização e melhorias internas de concorrência, garantindo componentes altamente reativos e facilidade na manipulação de estados globais e locais.
 
-:heavy_check_mark: **Página de Gerenciamento de Conta**:
-Área destinada à visualização do perfil do usuário autenticado e persistência de dados de sessão através de armazenamento local (*localStorage*).
+### 2. React Router DOM (v7)
+* **Justificativa:** Responsável pelo roteamento declarativo da aplicação Single Page Application (SPA). A versão 7 unifica os conceitos de loaders e actions, permitindo que os dados de cada página sejam buscados de forma paralela à renderização dos componentes, eliminando gargalos de carregamento (*spinners* infinitos) e melhorando drasticamente a experiência do usuário.
 
-## Pré-requisitos
+### 3. JSON Server (Mock API)
+* **Justificativa:** Integrado no script de desenvolvimento (`npm run server`), o `json-server` simula uma API RESTful completa a partir de um arquivo local (`data/db.json`). 
+* **Vantagem:** Permite o desenvolvimento assíncrono do frontend com operações completas de CRUD (`GET`, `POST`, `PUT`, `DELETE`), simulando cenários reais de latência de rede e requisições HTTP sem a necessidade imediata de implantar um backend robusto nas fases iniciais do projeto.
 
-:warning: **Node.js** (Ambiente de execução JavaScript - Versão LTS recomendada)  
-:warning: **NPM** (Gerenciador de pacotes nativo do Node.js)
+### 4. ESLint (Configuração Flat)
+* **Justificativa:** Configurado através do padrão moderno `eslint.config.js`, garante a padronização do código entre a equipe, aplicando regras estritas para React Hooks e prevenindo bugs comuns em tempo de desenvolvimento.
 
+---
 ## Como rodar a aplicação :arrow_forward:
 
 Para configurar o ambiente localmente e executar tanto a interface do usuário quanto o servidor de dados estruturados, siga os passos descritos no terminal de comando abaixo:
