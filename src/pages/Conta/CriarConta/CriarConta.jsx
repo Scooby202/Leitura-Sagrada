@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import BarradeAcões from "../../../components/BarradeAções"
 import Validação from "../../../components/Validação"
 import "../../../styles/Styles.css"
@@ -6,6 +7,7 @@ import { useId } from "react";
 function CriarConta () {
 
   const formData = document.querySelector("#form");
+  const navigate = useNavigate();
 
   const registerUser = async (userData) => {
 

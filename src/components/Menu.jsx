@@ -81,7 +81,7 @@ function Menu () {
 
             ) : (
 
-                  <p className="aviso">Biblia</p>
+                  <p className="aviso">Bíblia</p>
 
                 )}
 

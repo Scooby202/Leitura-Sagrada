@@ -19,14 +19,28 @@ function FormAnotação() {
     // Pega o email do usuário logado
     const usuarioLogado = JSON.parse(localStorage.getItem("user_logado"));
     const email = usuarioLogado?.email;
+    if (usuarioLogado ===  null) {
+      
+      fetch(`http://localhost:3000/notas?usuario=${""}`)
 
-    fetch(`http://localhost:3000/notas?usuario=${email}`)
+        .then((res) => res.json())
 
-      .then((res) => res.json())
+        .then((dados) => setNotas(dados))
 
-      .then((dados) => setNotas(dados))
+        .catch((err) => console.error("Erro ao buscar notas:", err));
 
-      .catch((err) => console.error("Erro ao buscar notas:", err));
+    }
+    else {
+
+      fetch(`http://localhost:3000/notas?usuario=${email}`)
+
+        .then((res) => res.json())
+
+        .then((dados) => setNotas(dados))
+
+        .catch((err) => console.error("Erro ao buscar notas:", err));
+
+    }
   
   };
 
@@ -44,6 +58,8 @@ function FormAnotação() {
 
       return;
     }
+
+    setUsuario(JSON.parse(localStorage.getItem("user_logado"))?.email);
 
     const dadosnota = { deQualVersiculo, nota, usuario };
 
@@ -114,7 +130,7 @@ function FormAnotação() {
 
     setNota(nota.nota);
 
-    setUsuario(JSON.parse(localStorage.getItem("user_logado"))?.email)
+    setUsuario(JSON.parse(localStorage.getItem("user_logado"))?.email);
 
   };
 
