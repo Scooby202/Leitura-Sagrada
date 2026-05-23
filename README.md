@@ -9,7 +9,7 @@ O **Leitura-Sagrada** é projeto web para criação, organização e consulta de
 A arquitetura de navegação foi projetada utilizando as capacidades de roteamento dinâmico do **React Router DOM**, dividindo-se nas seguintes visões principais:
 
 ### 1. Página Inicial
-* **Descrição:** Pagina que usuario tem a acesso a todas os versículos da biblía.
+* **Descrição:** Pagina que usuario tem a acesso a todas os versículos da bíblia.
 
 ### 2. Anotações
 * **Descrição:** Exibição completa do acervo de anotações do usuário.
