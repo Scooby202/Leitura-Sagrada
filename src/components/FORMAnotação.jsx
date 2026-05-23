@@ -5,6 +5,7 @@ function FormAnotação() {
   const [notas, setNotas] = useState([]);
   const [deQualVersiculo, setdeQualVersiculo] = useState('');
   const [nota, setNota] = useState('');
+  const [usuario, setUsuario] = useState('');
   
   // Esse estado controla se estamos criando uma nota nova ou editando uma existente
   const [idEditando, setIdEditando] = useState(null);
@@ -13,10 +14,16 @@ function FormAnotação() {
 
   // --- 1. READ (Buscar as notas do servidor) ---
   const buscarnotas = () => {
-    fetch(API_URL)
-      .then((res) => res.json())
-      .then((dados) => setNotas(dados))
-      .catch((err) => console.error("Erro ao buscar notas:", err));
+
+      // Pega o email do usuário logado
+const usuarioLogado = JSON.parse(localStorage.getItem("user_logado"));
+const email = usuarioLogado?.email;
+
+fetch(`http://localhost:3000/notas?usuario=${email}`)
+  .then((res) => res.json())
+  .then((dados) => setNotas(dados))
+  .catch((err) => console.error("Erro ao buscar notas:", err));
+  
   };
 
   useEffect(() => {
@@ -32,7 +39,7 @@ function FormAnotação() {
       return;
     }
 
-    const dadosnota = { deQualVersiculo, nota };
+    const dadosnota = { deQualVersiculo, nota, usuario };
 
     if (idEditando) {
       // Se tem um ID editando, fazemos um PUT para atualizar
@@ -74,6 +81,7 @@ function FormAnotação() {
     setIdEditando(nota.id);
     setdeQualVersiculo(nota.deQualVersiculo);
     setNota(nota.nota);
+    setUsuario(JSON.parse(localStorage.getItem("user_logado"))?.email)
   };
 
   // --- Auxiliar: Limpar os inputs ---
@@ -94,7 +102,7 @@ function FormAnotação() {
         <input 
           className="InputForm"
           type="text" 
-          placeholder="Título" 
+          placeholder="Qual Livro, Capitulo e Versículo" 
           value={deQualVersiculo} 
           onChange={(e) => setdeQualVersiculo(e.target.value)}
         />
@@ -129,7 +137,7 @@ function FormAnotação() {
       ) : (
         <div>
           {notas.map((nota) => (
-            <div key={nota.id}>
+            <div className="nota-texto-container" key={nota.id}>
               <h4>{nota.deQualVersiculo}</h4>
               <p>{nota.nota}</p>
               
