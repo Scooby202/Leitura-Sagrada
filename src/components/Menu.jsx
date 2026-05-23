@@ -28,6 +28,16 @@ const [livros, setLivros] = useState([]);
     setCapituloSelecionado(null); // Reseta o capítulo ao mudar de livro
   };
 
+  const sanduiche = () => {
+    if (lateralDireita.style.display == 'none') {
+      lateralDireita.style.display = 'grid'
+      meio.style.display = 'none'
+    } else {
+      lateralDireita.style.display = 'none'
+      meio.style.display = 'grid'
+    }
+  }
+
     return (
         
     <div className="app-container">
@@ -37,7 +47,7 @@ const [livros, setLivros] = useState([]);
             {/* Lista de livros aqui */}
         </aside>
       
-        <main className="bible-content">
+        <main className="bible-content" id="meio">
             <h1 className="chapter-title">   {capituloSelecionado ? (
           <>
             {livroSelecionado.nome} - Capítulo {capituloSelecionado.numero}
@@ -66,7 +76,7 @@ const [livros, setLivros] = useState([]);
       </div>
             </div>
         </main>
-        <aside className="sidebar sidebar-right">
+        <aside className="sidebar sidebar-right" id="lateralDireita">
         <h2>Leitura Sagrada</h2>
         
         {/* SELETOR DE LIVROS */}
@@ -97,6 +107,7 @@ const [livros, setLivros] = useState([]);
         </div>
       )}
         </aside>
+        <button className="login-button" id="mobileButton" type="button" onClick={sanduiche}> Menu </button>
     </div>
 
     )
