@@ -130738,27 +130738,55 @@
     {
       "id": "KzBx6sz_Oso",
       "email": "erick@gmail.com",
-      "password": "11111111111a"
+      "password": "11111111a"
+    },
+    {
+      "id": "i4QOWjtAsGc",
+      "email": "kkkk@gmail.com",
+      "password": "00000000a"
+    },
+    {
+      "id": "X4qzciPr67I",
+      "email": "as@gmail.com",
+      "password": "22222222a"
     }
   ],
   "notas": [
     {
-      "deQualVersiculo": "hhaaaaaaaaaaaaaaaaaaasddddddddddddddddddddddddddddddd",
-      "nota": "hhssaeadaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-      "usuario": "erick@gmail.com",
-      "id": "cbKno7_xUXA"
+      "deQualVersiculo": "z\\\\",
+      "nota": "z\\\\z\\",
+      "usuario": "",
+      "id": "16n1f1mdaA0"
     },
     {
-      "deQualVersiculo": "czxxc",
-      "nota": "zczc",
+      "deQualVersiculo": "aa",
+      "nota": "aa",
       "usuario": "",
-      "id": "-BFVWCT_HDc"
+      "id": "m_tXWA-fgZM"
     },
     {
-      "deQualVersiculo": "jhdhdhjasjissadddddddddddddddddd",
-      "nota": "sadddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+      "deQualVersiculo": "aa",
+      "nota": "aa",
       "usuario": "",
-      "id": "gmVPV8SrcLk"
+      "id": "JAFQdM7iULU"
+    },
+    {
+      "deQualVersiculo": "aa",
+      "nota": "aa",
+      "id": "ZsYx9TyRADE"
+    },
+    {
+      "deQualVersiculo": "zasd",
+      "nota": "asdad",
+      "usuario": "",
+      "id": "IdcOwtRfjMY"
+    },
+    {
+      "deQualVersiculo": "asaas",
+      "nota": "assa",
+      "usuario": "",
+      "id": "pzyHuocKnDs"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }

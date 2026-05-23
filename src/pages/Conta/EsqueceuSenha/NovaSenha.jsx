@@ -55,8 +55,6 @@ function NovaSenha () {
 
       });
 
-      alert("Senha alterada com sucesso!");
-
       navigate('/Login.jsx');
 
     } catch (erro) {

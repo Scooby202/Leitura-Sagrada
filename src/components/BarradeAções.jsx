@@ -9,7 +9,7 @@ function BarradeAções () {
 
             <div className="BotoesdaBarra">
 
-                <Link class="login-button" id="button-Barra" to={"/Anotações.jsx"}>Estudos</Link>
+                <Link class="login-button" id="button-Barra" to={"/Anotações.jsx"}>Anotações</Link>
 
                 <Link class="login-button" id="button-Barra" to={"/"}>Bíblia</Link>
 
