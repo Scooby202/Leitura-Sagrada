@@ -34,11 +34,11 @@ const codigoInput = document.querySelector("#codigo")
         }
     };
 
-    
+
         //Verificar a codigo
     if(codigoInput) {
-        if(!VerificarSenha(codigoInput.value, 6)) {
-            alert("Codigo tem 6 digitos")
+        if(!VerificarCodigo(codigoInput.value, 6)) {
+            alert("Codigo deve tem 6 digitos")
             return false;
         };
     };
@@ -64,6 +64,15 @@ const codigoInput = document.querySelector("#codigo")
     
         function VerificarSenha(password, minDigitos) {
             if(password.length >= minDigitos) {
+                return true;
+            };
+            
+            return false;
+            
+        };
+
+        function VerificarCodigo(password, minDigitos) {
+            if(password.length == minDigitos) {
                 return true;
             };
             
