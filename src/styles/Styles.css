@@ -436,7 +436,7 @@
   #mobileButton {
     display: block;
     position: fixed;
-    top: 50vh;
+    top: 30vh;
     right: 0;
     border-radius: 100px;
   }
@@ -485,7 +485,6 @@
   #mobileButton {
     display: block;
     position: fixed;
-    top: 50vh;
     right: 0;
     border-radius: 100px;
   }
