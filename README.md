@@ -47,3 +47,13 @@ Para configurar o ambiente localmente e executar tanto a interface do usuário q
 1. Clonar o repositório correspondente ao projeto:
 ```bash
 git clone [https://github.com/Scooby202/Processo-Trainee.git](https://github.com/Scooby202/Processo-Trainee.git)
+
+Navegar até o diretório raiz do projeto descompactado:
+cd leitura
+Instalar o conjunto completo de dependências declaradas no manifesto do projeto:
+npm install
+Inicializar o servidor de banco de dados fictício (JSON Server) para disponibilizar os endpoints da API:
+npm run server
+Inicializar o ambiente de desenvolvimento local (Vite/React):
+npm run dev
+Bibliotecas e Dependências do EcossistemaAs seguintes bibliotecas de terceiros foram instaladas para a correta orquestração dos recursos da aplicação:React Router DOM (Roteamento de Aplicação de Página Única):
